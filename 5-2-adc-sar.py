@@ -15,15 +15,15 @@ def decimal_2_binary ( value ):
 	return [ int (bit) for bit in bin( value )[2:].zfill(8) ]
 
 def adc ( dac, comp ):
-	result = [ 0, 0 ]
+	result = 0
 	for i in range( 8 ):
-		result[0] += 2**( 7 - i )
-		GPIO.output( dac, decimal_2_binary( result[0] ) )
+		result += 2**( 7 - i )
+		GPIO.output( dac, decimal_2_binary( result ) )
 		time.sleep(0.008)
 		if( GPIO.input( comp ) == 0 ):
-			result[0] -= 2**( 7 - i )
+			result -= 2**( 7 - i )
 	GPIO.output( dac, 0 )
-	return result[0];
+	return result;
 try:
 	while( True ):
 		time.sleep(0.008)
