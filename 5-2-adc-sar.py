@@ -28,7 +28,7 @@ try:
 	while( True ):
 		time.sleep(0.008)
 		number = adc( dac, comp )
-		voltage = number / 256 * 3.3
+		voltage = number / 255 * 3.3
 		print( "Number  " + str(number) + ", expected voltage:" + "{:.4f}".format( voltage ) + "V" )
 		time.sleep( 0.5 )
 
