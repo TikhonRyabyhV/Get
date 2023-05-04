@@ -76,6 +76,8 @@ finally:
 	with open( "settings.txt", "w" ) as output_file_2:
 		output_file_2.write( "Descrertiztion freq.:  " +"{:.4f}".format(  len( exp_data ) / all_time ) + " Hz" + "\nQuant. step:  " + "{:.4f}".format( volt_k  ) + " V" )
 
+	print ( "Experiment time:  " +  "{:.4f}".format( all_time ) + " sec\n" + "\nPeriod:  " +  "{:.4f}".format( all_time / len( exp_data ) ) + " sec" + "\nDescrertiztion freq.:  " +"{:.4f}".format(  len( exp_data ) / all_time ) + " Hz" + "\nQuant. step:  " + "{:.4f}".format( volt_k  ) + " V" ) 
+	
 	plot.plot (exp_data)
 	plot.show()
 
