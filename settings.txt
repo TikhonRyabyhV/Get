@@ -1,0 +1,2 @@
+Descrertiztion freq.:  5.7650 Hz
+Quant. step:  0.0129 V
